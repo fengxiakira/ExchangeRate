@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset="utf-8">
+        <meta name = "keywords" content="currency rate calculator">
+        <meta name = "description" content = "I build this exchangeRate calculator via JavaScript,Node.js,jQuery">
+        <meta name = "author" content="Mengyuan Li">
+        <!-- mobile -->
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
+        <!-- avoid zhuanma -->
+        <meta http-equiv="Cache-Control" content="no-siteapp" />
+        <title>Easy ExchangeRate</title>
+        <link rel="stylesheet" href="css/index.css">
+        <script src="js/code.js"></script>
+    </head>
+    <body>
+        <div class="hero">
+            <div class = "logo">
+
+            </div>
+        </div>
+        <div class = "description">
+            <h1>Easy ExchangeRate</h1>
+            <p>ExchangeRate is an easy-handled chrome plug. The data is based on <a href="http://" target="_blank" >***</a></p>
+        </div>
+        <div class = "main">
+            <!-- action html -->
+           <div class = "topCurr">
+               <input type="text" id = "CURR_INPUT" name = "CURR_INPUT" placeholder="100" value>
+            <div class = "topCurrOption">
+                <!-- 回来看网页写 -->
+                <select name="fix" id="currOption">
+                    <option value="CNY" >CNY</option>
+                    <option value="CAD" selected >CAD</option>
+                    <option value="USD">USD</option>
+                    <option value="EUR">EUR</option>
+                    <option value="JYP">JYP</option>
+                </select>
+            </div>
+           </div>
+            
+            <!-- placeholder 是出结果的地方 -->
+            <div class = "fix" id = "answer1">   
+                <span class = "equal"> = </span>       
+                <input type="text" id = "CURR_ANSWER1" name = "CURR_ANSWER1" placeholder="answer" value>
+                <div class = "currOption">
+                    <!-- 回来看网页写 -->
+                    <select name="fix" id="currOption">
+                        <option value="CNY" selected>CNY</option>
+                        <option value="CAD">CAD</option>
+                        <option value="USD">USD</option>
+                        <option value="EUR">EUR</option>
+                        <option value="JYP">JYP</option>
+                    </select>
+                </div>
+            </div>
+            <div class = "fix" id = "answer2"> 
+                    <span class = "equal"> = </span>          
+                    <input type="text" id = "CURR_ANSWER2" name = "CURR_ANSWER2" placeholder="answer" value>
+                    <div class = "currOption">
+                        <!-- 回来看网页写 -->
+                        <select name="fix" id="currOption">
+                            <option value="CNY">CNY</option>
+                            <option value="CAD">CAD</option>
+                            <option value="USD" selected>USD</option>
+                            <option value="EUR">EUR</option>
+                            <option value="JYP">JYP</option>
+                        </select>
+                    </div>
+                </div>
+                <div class = "fix" id = "answer3">
+                        <span class = "equal"> = </span>             
+                        <input type="text" id = "CURR_ANSWER3" name = "CURR_ANSWER3" placeholder="answer" value>
+                        <div class = "currOption">
+                            <!-- 回来看网页写 -->
+                            <select name="fix" id="currOption">
+                                <option value="CNY">CNY</option>
+                                <option value="CAD">CAD</option>
+                                <option value="USD">USD</option>
+                                <option value="EUR" selected>EUR</option>
+                                <option value="JYP">JYP</option>
+                            </select>
+                        </div>
+                </div>
+
+                <div class = "fix" id = "answer4">  
+                        <span class = "equal"> = </span>             
+                        <input type="text" id = "CURR_ANSWER4" name = "CURR_ANSWER4" placeholder="answer" value>
+                        <div class = "currOption">
+                            <!-- 回来看网页写 -->
+                            <select name="fix" id="currOption">
+                                <option value="CNY">CNY</option>
+                                <option value="CAD">CAD</option>
+                                <option value="USD">USD</option>
+                                <option value="EUR">EUR</option>
+                                <option value="JYP" selected>JYP</option>
+                            </select>
+                        </div>
+                    </div>
+
+           
+        </div>
+        <footer>
+            <span class = "copyright">© 2019 Mengyuan Li</span>
+        </footer>
+    </body>
+</html>
