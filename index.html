@@ -11,7 +11,10 @@
         <meta http-equiv="Cache-Control" content="no-siteapp" />
         <title>Easy ExchangeRate</title>
         <link rel="stylesheet" href="css/index.css">
-        <script src="js/code.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
+        <script src="js/code.js" type="text/javascript" charset="utf-8"></script>
     </head>
     <body>
         <div class="hero">
@@ -21,23 +24,27 @@
         </div>
         <div class = "description">
             <h1>Easy ExchangeRate</h1>
-            <p>ExchangeRate is an easy-handled chrome plug. The data is based on <a href="http://" target="_blank" >***</a></p>
+            <p>ExchangeRate is an easy-handled chrome plug. The data is based on <a href="https://exchangeratesapi.io" target="_blank" >Exchange rates API</a></p>
         </div>
         <div class = "main">
             <!-- action html -->
-           <div class = "topCurr">
-               <input type="text" id = "CURR_INPUT" name = "CURR_INPUT" placeholder="100" value>
-            <div class = "topCurrOption">
-                <!-- 回来看网页写 -->
-                <select name="fix" id="currOption">
-                    <option value="CNY" >CNY</option>
-                    <option value="CAD" selected >CAD</option>
-                    <option value="USD">USD</option>
-                    <option value="EUR">EUR</option>
-                    <option value="JYP">JYP</option>
-                </select>
+            <div class = "currFrom">
+                <div class = "topCurr">
+                    <input type="text" id = "CURR_INPUT" name = "CURR_INPUT" placeholder="100" value>
+                </div>
+                 <div class = "currOption">
+                     <!-- 回来看网页写 -->
+                     <select name="fix" id="CURR_FR">
+                         <option value="CNY" >CNY</option>
+                         <option value="CAD" selected >CAD</option>
+                         <option value="USD">USD</option>
+                         <option value="EUR">EUR</option>
+                         <option value="JYP">JYP</option>
+                     </select>
+                 </div>
             </div>
-           </div>
+           
+           
             
             <!-- placeholder 是出结果的地方 -->
             <div class = "fix" id = "answer1">   
@@ -45,7 +52,7 @@
                 <input type="text" id = "CURR_ANSWER1" name = "CURR_ANSWER1" placeholder="answer" value>
                 <div class = "currOption">
                     <!-- 回来看网页写 -->
-                    <select name="fix" id="currOption">
+                    <select name="fix" id="CURR_TO1">
                         <option value="CNY" selected>CNY</option>
                         <option value="CAD">CAD</option>
                         <option value="USD">USD</option>
@@ -59,7 +66,7 @@
                     <input type="text" id = "CURR_ANSWER2" name = "CURR_ANSWER2" placeholder="answer" value>
                     <div class = "currOption">
                         <!-- 回来看网页写 -->
-                        <select name="fix" id="currOption">
+                        <select name="fix" id="CURR_TO2">
                             <option value="CNY">CNY</option>
                             <option value="CAD">CAD</option>
                             <option value="USD" selected>USD</option>
@@ -73,7 +80,7 @@
                         <input type="text" id = "CURR_ANSWER3" name = "CURR_ANSWER3" placeholder="answer" value>
                         <div class = "currOption">
                             <!-- 回来看网页写 -->
-                            <select name="fix" id="currOption">
+                            <select name="fix" id="CURR_TO3">
                                 <option value="CNY">CNY</option>
                                 <option value="CAD">CAD</option>
                                 <option value="USD">USD</option>
@@ -88,7 +95,7 @@
                         <input type="text" id = "CURR_ANSWER4" name = "CURR_ANSWER4" placeholder="answer" value>
                         <div class = "currOption">
                             <!-- 回来看网页写 -->
-                            <select name="fix" id="currOption">
+                            <select name="fix" id="CURR_TO4">
                                 <option value="CNY">CNY</option>
                                 <option value="CAD">CAD</option>
                                 <option value="USD">USD</option>
@@ -103,5 +110,6 @@
         <footer>
             <span class = "copyright">© 2019 Mengyuan Li</span>
         </footer>
+       
     </body>
 </html>

@@ -1,11 +1,9 @@
-.fix .currOption{
-    display : inline-block
-}
-
-.topCurr .topCurrOption{
-    display: inline-block
-}
-
 body{
-    text-align: center
+    text-align: center;
+}
+.currFrom .topCurr{
+    display:inline-block;
+}
+.currOption{
+    display:inline-block;
 }
