@@ -13,7 +13,6 @@
         <link rel="stylesheet" href="css/index.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-        <script src="http://cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
         <script src="js/code.js" type="text/javascript" charset="utf-8"></script>
     </head>
     <body>
@@ -49,10 +48,11 @@
             <!-- placeholder 是出结果的地方 -->
             <div class = "fix" id = "answer1">   
                 <span class = "equal"> = </span>       
-                <input type="text" id = "CURR_ANSWER1" name = "CURR_ANSWER1" placeholder="answer" value>
+                <!-- <input type="text" id = "CURR_ANSWER1" name = "CURR_ANSWER1"> -->
+                <span class = "postfix" id = "CURR_ANSWER1"></span>
                 <div class = "currOption">
                     <!-- 回来看网页写 -->
-                    <select name="fix" id="CURR_TO1">
+                    <select name="answerOption" id="CURR_TO1">
                         <option value="CNY" selected>CNY</option>
                         <option value="CAD">CAD</option>
                         <option value="USD">USD</option>
@@ -63,10 +63,10 @@
             </div>
             <div class = "fix" id = "answer2"> 
                     <span class = "equal"> = </span>          
-                    <input type="text" id = "CURR_ANSWER2" name = "CURR_ANSWER2" placeholder="answer" value>
+                    <span class = "postfix" id = "CURR_ANSWER2"></span>
                     <div class = "currOption">
                         <!-- 回来看网页写 -->
-                        <select name="fix" id="CURR_TO2">
+                        <select name="answerOption" id="CURR_TO2">
                             <option value="CNY">CNY</option>
                             <option value="CAD">CAD</option>
                             <option value="USD" selected>USD</option>
@@ -77,10 +77,10 @@
                 </div>
                 <div class = "fix" id = "answer3">
                         <span class = "equal"> = </span>             
-                        <input type="text" id = "CURR_ANSWER3" name = "CURR_ANSWER3" placeholder="answer" value>
+                        <span class = "postfix" id = "CURR_ANSWER3"></span>
                         <div class = "currOption">
                             <!-- 回来看网页写 -->
-                            <select name="fix" id="CURR_TO3">
+                            <select name="answerOption" id="CURR_TO3">
                                 <option value="CNY">CNY</option>
                                 <option value="CAD">CAD</option>
                                 <option value="USD">USD</option>
@@ -92,10 +92,10 @@
 
                 <div class = "fix" id = "answer4">  
                         <span class = "equal"> = </span>             
-                        <input type="text" id = "CURR_ANSWER4" name = "CURR_ANSWER4" placeholder="answer" value>
+                        <span class = "postfix" id = "CURR_ANSWER4"></span>
                         <div class = "currOption">
                             <!-- 回来看网页写 -->
-                            <select name="fix" id="CURR_TO4">
+                            <select name="answerOption" id="CURR_TO4">
                                 <option value="CNY">CNY</option>
                                 <option value="CAD">CAD</option>
                                 <option value="USD">USD</option>
