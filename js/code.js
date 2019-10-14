@@ -1,6 +1,7 @@
 (function ($) {
     $(document).ready(function () {
         let inputMoney = $('#CURR_INPUT');
+        let add = $('add');
         let answerMoney1 = $('#CURR_ANSWER1');
         let answerMoney2 = $('#CURR_ANSWER2');
         let answerMoney3 = $('#CURR_ANSWER3');
@@ -25,7 +26,7 @@
             fetchExchangeRate('CURR_TO4', answerMoney4);
         })
 
-        // need fix 
+
         $("#CURR_FR").on('change', function () {
             fetchExchangeRate('CURR_TO1', answerMoney1);
             fetchExchangeRate('CURR_TO2', answerMoney2);
@@ -86,7 +87,6 @@
             });
 
         }
-        // on?
         // 获取具体汇率？
         console.clear();
 

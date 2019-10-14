@@ -1,59 +1,63 @@
 <!DOCTYPE html>
-<html lang = "en">
-    <head>
-        <meta charset="utf-8">
-        <meta name = "keywords" content="currency rate calculator">
-        <meta name = "description" content = "I build this exchangeRate calculator via JavaScript,Node.js,jQuery">
-        <meta name = "author" content="Mengyuan Li">
-        <!-- mobile -->
-        <meta name="viewport" content="width=device-width, initial-scale=1"> 
-        <!-- avoid zhuanma -->
-        <meta http-equiv="Cache-Control" content="no-siteapp" />
-        <title>Easy ExchangeRate</title>
-        <link rel="stylesheet" href="css/index.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-        <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-        <script src="js/code.js" type="text/javascript" charset="utf-8"></script>
-    </head>
-    <body>
-        <div class="hero">
-            <div class = "logo">
+<html lang="en">
 
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="currency rate calculator">
+    <meta name="description" content="I build this exchangeRate calculator via JavaScript,Node.js,jQuery">
+    <meta name="author" content="Mengyuan Li">
+    <!-- mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- avoid zhuanma -->
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <title>Easy ExchangeRate</title>
+    <link rel="stylesheet" href="css/index.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="js/code.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<body>
+    <div class="hero">
+        <div class="logo">
+
+        </div>
+    </div>
+    <div class="description">
+
+        <h1>Easy ExchangeRate</h1>
+        <h2>Light. Fast. Reliable.</h2>
+        <p>ExchangeRate is an easy-handled chrome plug. The data is based on <a href="https://exchangeratesapi.io"
+                target="_blank">Exchange rates API</a></p>
+    </div>
+    <div class="main">
+        <!-- action html -->
+        <div class="currFrom">
+            <div class="topCurr">
+                <input type="text" id="CURR_INPUT" name="CURR_INPUT" placeholder="100" value>
+            </div>
+            <div class="currOption">
+                <!-- 回来看网页写 -->
+                <select name="fix" id="CURR_FR">
+                    <option value="CNY">CNY</option>
+                    <option value="CAD" selected>CAD</option>
+                    <option value="USD">USD</option>
+                    <option value="EUR">EUR</option>
+                    <option value="JPY">JPY</option>
+                </select>
             </div>
         </div>
-        <div class = "description">
-            
-            <h1>Easy ExchangeRate</h1>
-            <h2>Light.  Fast.   Reliable.</h2>
-            <p>ExchangeRate is an easy-handled chrome plug. The data is based on <a href="https://exchangeratesapi.io" target="_blank" >Exchange rates API</a></p>
-        </div>
-        <div class = "main">
-            <!-- action html -->
-            <div class = "currFrom">
-                <div class = "topCurr">
-                    <input type="text" id = "CURR_INPUT" name = "CURR_INPUT" placeholder="100" value>
-                </div>
-                 <div class = "currOption">
-                     <!-- 回来看网页写 -->
-                     <select name="fix" id="CURR_FR">
-                         <option value="CNY" >CNY</option>
-                         <option value="CAD" selected >CAD</option>
-                         <option value="USD">USD</option>
-                         <option value="EUR">EUR</option>
-                         <option value="JPY">JPY</option>
-                     </select>
-                 </div>
-            </div>
-           
-           
-            
-            <!-- placeholder 是出结果的地方 -->
-            <div class = "fix" id = "answer1">   
-                <span class = "equal"> = </span>       
+
+
+
+        <!-- placeholder 是出结果的地方 -->
+        <div class="list" id="list">
+            <div class="fix" id="answer1">
+                <span class="equal"> = </span>
                 <!-- <input type="text" id = "CURR_ANSWER1" name = "CURR_ANSWER1"> -->
-                <span class = "postfix" id = "CURR_ANSWER1"></span>
-                <div class = "currOption">
-                    <!-- 回来看网页写 -->
+                <span class="postfix" id="CURR_ANSWER1"></span>
+                <div class="currOption">
+
                     <select name="answerOption" id="CURR_TO1">
                         <option value="CNY" selected>CNY</option>
                         <option value="CAD">CAD</option>
@@ -62,56 +66,79 @@
                         <option value="JPY">JPY</option>
                     </select>
                 </div>
+
             </div>
-            <div class = "fix" id = "answer2"> 
-                    <span class = "equal"> = </span>          
-                    <span class = "postfix" id = "CURR_ANSWER2"></span>
-                    <div class = "currOption">
-                        <!-- 回来看网页写 -->
-                        <select name="answerOption" id="CURR_TO2">
+
+
+            <div class="fix" id="answer2">
+                <span class="equal"> = </span>
+                <span class="postfix" id="CURR_ANSWER2"></span>
+                <div class="currOption">
+                    <select name="answerOption" id="CURR_TO2">
+                        <option value="CNY">CNY</option>
+                        <option value="CAD">CAD</option>
+                        <option value="USD" selected>USD</option>
+                        <option value="EUR">EUR</option>
+                        <option value="JPY">JPY</option>
+                    </select>
+                </div>
+                <!--  
+            <span class="icon-add">
+                <i class="fa-add">
+                    ::before
+                </i>
+            </span>
+            <span class="icont-delete">
+                <i class="fa-trash">
+                    ::before
+                </i>
+            </span>
+            -->
+            </div>
+
+
+            <!--  
+                <div class="fix" id="answer3">
+                    <span class="equal"> = </span>
+                    <span class="postfix" id="CURR_ANSWER3"></span>
+                    <div class="currOption">
+    
+                        <select name="answerOption" id="CURR_TO3">
                             <option value="CNY">CNY</option>
                             <option value="CAD">CAD</option>
-                            <option value="USD" selected>USD</option>
-                            <option value="EUR">EUR</option>
+                            <option value="USD">USD</option>
+                            <option value="EUR" selected>EUR</option>
                             <option value="JPY">JPY</option>
                         </select>
                     </div>
                 </div>
-                <div class = "fix" id = "answer3">
-                        <span class = "equal"> = </span>             
-                        <span class = "postfix" id = "CURR_ANSWER3"></span>
-                        <div class = "currOption">
-                            <!-- 回来看网页写 -->
-                            <select name="answerOption" id="CURR_TO3">
-                                <option value="CNY">CNY</option>
-                                <option value="CAD">CAD</option>
-                                <option value="USD">USD</option>
-                                <option value="EUR" selected>EUR</option>
-                                <option value="JPY">JPY</option>
-                            </select>
-                        </div>
-                </div>
-
-                <div class = "fix" id = "answer4">  
-                        <span class = "equal"> = </span>             
-                        <span class = "postfix" id = "CURR_ANSWER4"></span>
-                        <div class = "currOption">
-                            <!-- 回来看网页写 -->
-                            <select name="answerOption" id="CURR_TO4">
-                                <option value="CNY">CNY</option>
-                                <option value="CAD">CAD</option>
-                                <option value="USD">USD</option>
-                                <option value="EUR">EUR</option>
-                                <option value="JPY" selected>JPY</option>
-                            </select>
-                        </div>
+            
+            
+            
+                <div class="fix" id="answer4">
+                    <span class="equal"> = </span>
+                    <span class="postfix" id="CURR_ANSWER4"></span>
+                    <div class="currOption">
+                        
+                        <select name="answerOption" id="CURR_TO4">
+                            <option value="CNY">CNY</option>
+                            <option value="CAD">CAD</option>
+                            <option value="USD">USD</option>
+                            <option value="EUR">EUR</option>
+                            <option value="JPY" selected>JPY</option>
+                        </select>
                     </div>
+                </div>
+                -->
 
-           
+
         </div>
-        <footer>
-            <span class = "copyright">© 2019 Mengyuan Li</span>
-        </footer>
-       
-    </body>
+
+    </div>
+    <footer>
+        <span class="copyright">© 2019 Mengyuan Li</span>
+    </footer>
+
+</body>
+
 </html>
