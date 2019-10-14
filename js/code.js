@@ -18,6 +18,13 @@
             }
         }
 
+        //dynamic dome
+        $('#add').on('click',function(){
+            console.log("print");
+            let template = $('.list .fix:first-child').clone(true);
+            $('.list').append(template);
+        });
+
         // 实时监听
         inputMoney.on('input propertychange', function () {
             fetchExchangeRate('CURR_TO1', answerMoney1);
