@@ -1,11 +1,7 @@
 (function ($) {
     $(document).ready(function () {
         let inputMoney = $('#CURR_INPUT');
-        let add = $('add');
         let answerMoney1 = $('#CURR_ANSWER1');
-        let answerMoney2 = $('#CURR_ANSWER2');
-        let answerMoney3 = $('#CURR_ANSWER3');
-        let answerMoney4 = $('#CURR_ANSWER4');
         let API_ENDPOINT = "https://api.exchangeratesapi.io/latest";
 
         // ???currOption多个选项，造个函数？
@@ -17,36 +13,44 @@
                 return "?base=" + $('#CURR_FR option:selected').val();
             }
         }
-
-        //dynamic dome
-        $('#add').on('click',function(){
-            console.log("print");
-            let template = $('.list .fix:first-child').clone(true);
-            $('.list').append(template);
-        });
-
         // 实时监听
-        inputMoney.on('input propertychange', function () {
-            fetchExchangeRate('CURR_TO1', answerMoney1);
-            fetchExchangeRate('CURR_TO2', answerMoney2);
-            fetchExchangeRate('CURR_TO3', answerMoney3);
-            fetchExchangeRate('CURR_TO4', answerMoney4);
-        })
-
-
         $("#CURR_FR").on('change', function () {
             fetchExchangeRate('CURR_TO1', answerMoney1);
-            fetchExchangeRate('CURR_TO2', answerMoney2);
-            fetchExchangeRate('CURR_TO3', answerMoney3);
-            fetchExchangeRate('CURR_TO4', answerMoney4);
+        })
+
+        //dynamic dome
+        let i = 2;
+        $('#add').on('click', function () {
+            let template = $('.list .fix:first-child').clone(true);
+            let a = i++
+            template.attr("id", `answer${a}`);
+            template.find("span.postfix").attr("id", `CURR_ANSWER${a}`);
+            template.find("select").attr("id", `CURR_TO${a}`);
+            $('.list').append(template);
+            let temp = `CURR_ANSWER${a}`;
+            let answerMoney3 = $(`#${temp}`);
+            $("#CURR_FR").on('change', function () {
+                fetchExchangeRate(`CURR_TO${a}`, answerMoney3);
+            })
+            $('#CURR_INPUT').on('input propertychange', function () {
+                fetchExchangeRate(`CURR_TO${a}`, answerMoney3);
+            })
+            totalChange(`CURR_TO${a}`, answerMoney3);
+        });
+
+        //delete
+        $('#delete').on('click', function () {
+            console.log("done");
+
+        })
+
+        inputMoney.on('input propertychange', function () {
+            fetchExchangeRate('CURR_TO1', answerMoney1);
         })
 
         //   options
         // 
         totalChange('CURR_TO1', answerMoney1);
-        totalChange('CURR_TO2', answerMoney2);
-        totalChange('CURR_TO3', answerMoney3);
-        totalChange('CURR_TO4', answerMoney4);
 
         function totalChange(toPlace, answerPlace) {
             fetchExchangeRate(toPlace, answerPlace);
@@ -71,9 +75,9 @@
                 let currFrom = parseFloat(inputMoney.val());
                 // console.log(currToSelect);
                 if (currToSelect == 'EUR' && currFrSelect == 'EUR') {
-                    if(isNaN(currFrom)){
+                    if (isNaN(currFrom)) {
                         answerTO.html(100.00);
-                    }else{
+                    } else {
                         answerTO.html(currFrom);
                     }
                 }
@@ -90,7 +94,6 @@
                     }
 
                 }
-
             });
 
         }

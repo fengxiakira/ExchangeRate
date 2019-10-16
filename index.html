@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="currency rate calculator">
-    <meta name="description" content="I build this exchangeRate calculator via JavaScript,Node.js,jQuery">
+    <meta name="description" content="I build this exchangeRate calculator via JavaScript & jQuery">
     <meta name="author" content="Mengyuan Li">
     <!-- mobile -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -44,6 +44,11 @@
                     <option value="USD">USD</option>
                     <option value="EUR">EUR</option>
                     <option value="JPY">JPY</option>
+                    <option value="GBP">GBP</option>
+                    <option value="AUD">AUD</option>
+                    <option value="SGD">SGD</option>
+                    <option value="HKD">HKD</option>
+                    <option value="KRW">KRW</option>
                 </select>
             </div>
         </div>
@@ -57,81 +62,22 @@
                 <!-- <input type="text" id = "CURR_ANSWER1" name = "CURR_ANSWER1"> -->
                 <span class="postfix" id="CURR_ANSWER1"></span>
                 <div class="currOption">
-
                     <select name="answerOption" id="CURR_TO1">
                         <option value="CNY" selected>CNY</option>
                         <option value="CAD">CAD</option>
                         <option value="USD">USD</option>
                         <option value="EUR">EUR</option>
                         <option value="JPY">JPY</option>
+                        <option value="GBP">GBP</option>
+                        <option value="AUD">AUD</option>
+                        <option value="SGD">SGD</option>
+                        <option value="HKD">HKD</option>
+                        <option value="KRW">KRW</option>
                     </select>
                 </div>
-                <button id = "add" type="button">Add</button>
-                <button id = "delete" type="button">Delete</button>
+                <button id="add" type="button">Add</button>
+                <button id="delete" type="button">Delete</button>
             </div>
-
-
-            <div class="fix" id="answer2">
-                <span class="equal"> = </span>
-                <span class="postfix" id="CURR_ANSWER2"></span>
-                <div class="currOption">
-                    <select name="answerOption" id="CURR_TO2">
-                        <option value="CNY">CNY</option>
-                        <option value="CAD">CAD</option>
-                        <option value="USD" selected>USD</option>
-                        <option value="EUR">EUR</option>
-                        <option value="JPY">JPY</option>
-                    </select>
-                </div>
-                <!--  
-            <span class="icon-add">
-                <i class="fa-add">
-                    ::before
-                </i>
-            </span>
-            <span class="icont-delete">
-                <i class="fa-trash">
-                    ::before
-                </i>
-            </span>
-            -->
-            </div>
-
-
-            <!--  
-                <div class="fix" id="answer3">
-                    <span class="equal"> = </span>
-                    <span class="postfix" id="CURR_ANSWER3"></span>
-                    <div class="currOption">
-    
-                        <select name="answerOption" id="CURR_TO3">
-                            <option value="CNY">CNY</option>
-                            <option value="CAD">CAD</option>
-                            <option value="USD">USD</option>
-                            <option value="EUR" selected>EUR</option>
-                            <option value="JPY">JPY</option>
-                        </select>
-                    </div>
-                </div>
-            
-            
-            
-                <div class="fix" id="answer4">
-                    <span class="equal"> = </span>
-                    <span class="postfix" id="CURR_ANSWER4"></span>
-                    <div class="currOption">
-                        
-                        <select name="answerOption" id="CURR_TO4">
-                            <option value="CNY">CNY</option>
-                            <option value="CAD">CAD</option>
-                            <option value="USD">USD</option>
-                            <option value="EUR">EUR</option>
-                            <option value="JPY" selected>JPY</option>
-                        </select>
-                    </div>
-                </div>
-                -->
-
 
         </div>
 
