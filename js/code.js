@@ -1,3 +1,5 @@
+// 怎么减小call 服务器的次数？
+
 (function ($) {
     $(document).ready(function () {
         let inputMoney = $('#CURR_INPUT');
@@ -22,11 +24,21 @@
         let i = 2;
         $('#add').on('click', function () {
             let template = $('.list .fix:first-child').clone(true);
-            let a = i++
+            let a = i++;
             template.attr("id", `answer${a}`);
             template.find("span.postfix").attr("id", `CURR_ANSWER${a}`);
             template.find("select").attr("id", `CURR_TO${a}`);
+            template.find("button.btn2").attr("id", `delete${a}`);
             $('.list').append(template);
+
+            // delete DOM
+            let temp1 = `delete${a}`;
+            let delBtn = $(`#${temp1}`);
+            delBtn.on('click', function () {
+                $(`#answer${a}`).remove();
+                console.log("deleted");
+            })
+
             let temp = `CURR_ANSWER${a}`;
             let answerMoney3 = $(`#${temp}`);
             $("#CURR_FR").on('change', function () {
@@ -37,12 +49,6 @@
             })
             totalChange(`CURR_TO${a}`, answerMoney3);
         });
-
-        //delete
-        $('#delete').on('click', function () {
-            console.log("done");
-
-        })
 
         inputMoney.on('input propertychange', function () {
             fetchExchangeRate('CURR_TO1', answerMoney1);
@@ -82,9 +88,6 @@
                     }
                 }
                 else {
-                    // JSON objec
-                    // console.log(inputMoney);
-                    // alert(currFrom);
                     if (isNaN(currFrom)) {
                         let value = 100.0 * (data.rates[currToSelect]);
                         answerTO.html(value.toFixed(2));
@@ -92,10 +95,8 @@
                     else {
                         answerTO.html((currFrom * data.rates[currToSelect]).toFixed(2));
                     }
-
                 }
             });
-
         }
         // 获取具体汇率？
         console.clear();
