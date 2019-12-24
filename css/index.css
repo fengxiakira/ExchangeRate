@@ -1,5 +1,9 @@
 body{
     text-align: center;
+    font-size: 20px;
+    line-height: 1.47059;
+    font-weight: 400;
+    letter-spacing: -.022em;
 }
 h1{
     font-size: 28px;
@@ -18,8 +22,14 @@ h2{
 }
 
 .currFrom .topCurr{
+    font-size: 20px;
     display:inline-block;
 }
 .currOption{
     display:inline-block;
 }
+.fix{
+    margin: 5px;
+}
+
+

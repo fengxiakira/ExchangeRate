@@ -6,8 +6,7 @@
         let answerMoney1 = $('#CURR_ANSWER1');
         let API_ENDPOINT = "https://api.exchangeratesapi.io/latest";
 
-        // ???currOption多个选项，造个函数？
-        // EUO不加base
+       
         function getQueryString() {
             if ($('#CURR_FR option:selected').val() == 'EUR') {
                 return "";
@@ -22,6 +21,13 @@
 
         //dynamic dome
         let i = 2;
+
+        $('#delete').on('click',function(){
+            if($('#list').children().length<=1){
+                alert("You cannot delete options anymore!");
+            }
+        })
+
         $('#add').on('click', function () {
             let template = $('.list .fix:first-child').clone(true);
             let a = i++;
@@ -30,13 +36,18 @@
             template.find("select").attr("id", `CURR_TO${a}`);
             template.find("button.btn2").attr("id", `delete${a}`);
             $('.list').append(template);
+            console.log($('#list').children().length);
 
             // delete DOM
+            //delete on click
+
             let temp1 = `delete${a}`;
+            console.log(a);
             let delBtn = $(`#${temp1}`);
             delBtn.on('click', function () {
                 $(`#answer${a}`).remove();
                 console.log("deleted");
+                console.log($('#list').children().length);
             })
 
             let temp = `CURR_ANSWER${a}`;
@@ -99,7 +110,7 @@
             });
         }
         // 获取具体汇率？
-        console.clear();
+        // console.clear();
 
     });
 })(jQuery);
