@@ -46,5 +46,13 @@ footer{
     padding:5px;
     font-size: 14px;
 }
+ul.list-inline{
+    margin-top:0;
+    margin-bottom:15px;
+}
+ul.social-buttons li a{
+    display:inline;
+  
+}
 
 
