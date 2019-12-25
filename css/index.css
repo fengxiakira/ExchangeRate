@@ -1,21 +1,27 @@
+html {
+    height: 100%;
+  }
 body{
     text-align: center;
     font-size: 20px;
-    line-height: 1.47059;
+    line-height: 1.27059;
     font-weight: 400;
     letter-spacing: -.022em;
+    display:flex;
+    height: 100vh;
+    flex-direction: column;
 }
 h1{
-    font-size: 28px;
-    line-height: 1.14286;
+    font-size: 25px;
+    line-height: 1.04286;
     font-weight: 600;
     letter-spacing: .007em;
     font-family: "SF Pro Display","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
 }
 
 h2{
-    font-size: 56px;
-    line-height: 1.07143;
+    font-size: 45px;
+    line-height: 1.06143;
     font-weight: 600;
     letter-spacing: -.005em;
     font-family: "SF Pro Display","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
@@ -30,6 +36,15 @@ h2{
 }
 .fix{
     margin: 5px;
+}
+.content{
+    flex:1 0 auto;
+    padding: 20px;
+}
+footer{
+    flex-shrink: 0;
+    padding:5px;
+    font-size: 14px;
 }
 
 

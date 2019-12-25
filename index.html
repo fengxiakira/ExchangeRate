@@ -1,98 +1,132 @@
 <!-- todo -->
 <!-- 
     1.加react效果，滑动删除效果
-    2.footer 定在页面底部 
-    3.加f,Github,LinkedIn,Twitter连接
+ 
+    3.加f,Github,LinkedIn,Twitter连接,需要li,footer,do here
     4.怎么和Chrome 连接？
     5. CSS 美化-->
 
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <meta name="keywords" content="currency rate calculator">
-    <meta name="description" content="I build this exchangeRate calculator via JavaScript & jQuery">
-    <meta name="author" content="Mengyuan Li">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="keywords" content="currency rate calculator" />
+    <meta
+      name="description"
+      content="I build this exchangeRate calculator via JavaScript & jQuery"
+    />
+    <meta name="author" content="Mengyuan Li" />
     <!-- mobile -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- avoid zhuanma -->
     <meta http-equiv="Cache-Control" content="no-siteapp" />
     <title>Easy ExchangeRate</title>
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/index.css" />
+  </head>
 
-</head>
-
-<body>
-    <div class="hero">
-        <div class="logo">
-
-        </div>
-    </div>
-    <div class="description">
-
+  <body>
+    <div class="content">
+      <div class="hero">
+        <div class="logo"></div>
+      </div>
+      <div class="description">
         <h1>Easy ExchangeRate</h1>
         <h2>Light. Fast. Reliable.</h2>
-        <p>ExchangeRate is an easy-handled chrome plug. The data is based on <a href="https://exchangeratesapi.io"
-                target="_blank">Exchange rates API</a></p>
-    </div>
-    <div class="main">
+        <p>
+          ExchangeRate is an easy-handled chrome plug. The data is based on
+          <a href="https://exchangeratesapi.io" target="_blank"
+            >Exchange rates API</a
+          >
+        </p>
+      </div>
+      <div class="main">
         <!-- action html -->
         <div class="currFrom">
-            <div class="topCurr">
-                <input type="text" id="CURR_INPUT" name="CURR_INPUT" placeholder="100" value>
-            </div>
-            <div class="currOption">
-                
-                <select name="fix" id="CURR_FR">
-                    <option value="CNY">CNY</option>
-                    <option value="CAD" selected>CAD</option>
-                    <option value="USD">USD</option>
-                    <option value="EUR">EUR</option>
-                    <option value="JPY">JPY</option>
-                    <option value="GBP">GBP</option>
-                    <option value="AUD">AUD</option>
-                    <option value="SGD">SGD</option>
-                    <option value="HKD">HKD</option>
-                    <option value="KRW">KRW</option>
-                </select>
-            </div>
+          <div class="topCurr">
+            <input type="text" id="CURR_INPUT" name="CURR_INPUT" placeholder="100" value/>
+          </div>
+          <div class="currOption">
+            <select name="fix" id="CURR_FR">
+              <option value="CNY">CNY</option>
+              <option value="CAD" selected>CAD</option>
+              <option value="USD">USD</option>
+              <option value="EUR">EUR</option>
+              <option value="JPY">JPY</option>
+              <option value="GBP">GBP</option>
+              <option value="AUD">AUD</option>
+              <option value="SGD">SGD</option>
+              <option value="HKD">HKD</option>
+              <option value="KRW">KRW</option>
+            </select>
+          </div>
         </div>
 
         <!-- placeholder 是出结果的地方 -->
         <div class="list" id="list">
-            <div class="fix" id="answer1">
-                <span class="equal"> = </span>
-                <!-- <input type="text" id = "CURR_ANSWER1" name = "CURR_ANSWER1"> -->
-                <span class="postfix" id="CURR_ANSWER1"></span>
-                <div class="currOption">
-                    <select name="answerOption" id="CURR_TO1">
-                        <option value="CNY" selected>CNY</option>
-                        <option value="CAD">CAD</option>
-                        <option value="USD">USD</option>
-                        <option value="EUR">EUR</option>
-                        <option value="JPY">JPY</option>
-                        <option value="GBP">GBP</option>
-                        <option value="AUD">AUD</option>
-                        <option value="SGD">SGD</option>
-                        <option value="HKD">HKD</option>
-                        <option value="KRW">KRW</option>
-                    </select>
-                </div>
-                <button id="add" class = "btn1" type="button">Add</button>
-                <button id="delete" class = "btn2" type="button">Delete</button>
+          <div class="fix" id="answer1">
+            <span class="equal"> = </span>
+            <!-- <input type="text" id = "CURR_ANSWER1" name = "CURR_ANSWER1"> -->
+            <span class="postfix" id="CURR_ANSWER1"></span>
+            <div class="currOption">
+              <select name="answerOption" id="CURR_TO1">
+                <option value="CNY" selected>CNY</option>
+                <option value="CAD">CAD</option>
+                <option value="USD">USD</option>
+                <option value="EUR">EUR</option>
+                <option value="JPY">JPY</option>
+                <option value="GBP">GBP</option>
+                <option value="AUD">AUD</option>
+                <option value="SGD">SGD</option>
+                <option value="HKD">HKD</option>
+                <option value="KRW">KRW</option>
+              </select>
             </div>
-
+            <button id="add" class="btn1" type="button">Add</button>
+            <button id="delete" class="btn2" type="button">Delete</button>
+          </div>
         </div>
-
+      </div>
     </div>
     <footer>
-        <span class="copyright">© 2019 Mengyuan Li</span>
+      <!-- site info -->
+      <div class = "site-info">
+            <div class = "container">
+              <div class="row">
+                <div class="col-12 ml-auto">
+                    <ul class = "social-buttons list-inline">
+                        <li>
+                            <a title="Github" href="https://github.com/fengxiakira">
+                            ::before
+                            </a>
+                        </li>
+                        <li>
+                            <a title="facebook" href="https://www.facebook.com/akira.li.79">
+                            ::before
+                            </a>
+                        </li>
+                        <li>
+                            <a title="linkedin" href="https://www.linkedin.com/in/mengyuan-li-a1b059104/">
+                            ::before
+                            </a>
+                        </li>
+                        <li>
+                            <a title="Instagram" href="https://www.instagram.com/fengxiakira/">
+                            ::before
+                            </a>
+                        </li>
+                        ::after
+                    </ul>
+                    
+                 </div>
+                </div>
+              </div>
+          </div>
+      </div>
+      <!-- rights reserved -->
+      <span class="copyright">© 2019 Mengyuan Li.All rights reserved.</span>
     </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <script src="js/code.js" type="text/javascript" charset="utf-8"></script>
-
-</body>
-
+  </body>
 </html>
