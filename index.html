@@ -1,8 +1,10 @@
 <!-- todo -->
 <!-- 
-    1.加react效果，滑动删除效果
+
  
-    3.加f,Github,LinkedIn,Twitter连接,需要li,footer,do here
+    1. before after 变色
+    2. social contact 放大?
+    3.栏目固定长度
     4.怎么和Chrome 连接？
     5. CSS 美化-->
 
@@ -26,6 +28,8 @@
     <!-- fontawasom icon -->
     <link rel="stylesheet" href="fontawesome/css/fontawesome.css">
     <link rel="stylesheet" href="fontawesome/css/brands.css">
+    <!-- iconfont -->
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_1585179_oewtewmallr.css">
     <!-- customed css -->
     <link rel="stylesheet" href="css/index.css" />
   </head>
@@ -52,7 +56,7 @@
             <input type="text" id="CURR_INPUT" name="CURR_INPUT" placeholder="100" value/>
           </div>
           <div class="currOption">
-            <select name="fix" id="CURR_FR">
+            <select name="opt" id="CURR_FR">
               <option value="CNY">CNY</option>
               <option value="CAD" selected>CAD</option>
               <option value="USD">USD</option>
@@ -68,8 +72,8 @@
         </div>
 
         <!-- placeholder 是出结果的地方 -->
-        <div class="list" id="list">
-          <div class="fix" id="answer1">
+        <ul class="list col-xs-8 col-sm-9" id="list">
+          <li class="fix" id="answer1 ">
             <span class="equal"> = </span>
             <!-- <input type="text" id = "CURR_ANSWER1" name = "CURR_ANSWER1"> -->
             <span class="postfix" id="CURR_ANSWER1"></span>
@@ -87,12 +91,16 @@
                 <option value="KRW">KRW</option>
               </select>
             </div>
-            <button id="add" class="btn1" type="button">Add</button>
-            <button id="delete" class="btn2" type="button">Delete</button>
-          </div>
-        </div>
-      </div>
+            <!-- <button id="add" class="btn1" type="button">Add</button> -->
+            <div class="buttons">
+              <a href="#" id="add"><i class="iconfont icon-zengjia"></i></a>
+              <a href="#" class="del"><i class="iconfont icon-icon7"></i></a>
+            </div>
+            <!-- <button id="delete1" class="btn2" type="button">Delete</button> -->
+          </li>
+        </ul>
     </div>
+  </div>
     <footer>
       <!-- site info -->
       <div class = "site-info">
@@ -103,32 +111,32 @@
                         <li>
                             <a title="Github" href="https://github.com/fengxiakira">
                                 <i class="fab fa-github">
-                                    ::before
+                                    
                                 </i>
                             </a>
                         </li>
                         <li>
                             <a title="facebook" href="https://www.facebook.com/akira.li.79">
                                 <i class="fab fa-facebook-f">
-                                    ::before
+                                    
                                 </i>
                             </a>
                         </li>
                         <li>
                             <a title="linkedin" href="https://www.linkedin.com/in/mengyuan-li-a1b059104/">
                                 <i class="fab fa-linkedin-in">
-                                    ::before
+                                    
                                 </i>
                             </a>
                         </li>
                         <li>
                             <a title="Instagram" href="https://www.instagram.com/fengxiakira/">
                                 <i class="fab fa-instagram">
-                                    ::before
+                                   
                                 </i>
                             </a>
                         </li>
-                        ::after
+                        
                     </ul>
                  </div>
                 </div>
@@ -137,14 +145,16 @@
       </div>
       <!-- rights reserved -->
       <span class="copyright">© 2019 Mengyuan Li.All rights reserved.</span>
-      
     </footer>
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <!-- proper js -->
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <!-- bootstrap js -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <!-- foontawasome js
+    <script src="fontawesome/js/all.js"></script> -->
     <script src="js/code.js" type="text/javascript" charset="utf-8"></script>
   </body>
 </html>

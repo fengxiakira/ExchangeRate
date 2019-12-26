@@ -4,19 +4,20 @@ html {
 body{
     text-align: center;
     font-size: 20px;
-    line-height: 1.27059;
+    line-height: 1.37059;
     font-weight: 400;
-    letter-spacing: -.022em;
+    /* letter-spacing: -.022em; */
     display:flex;
     height: 100vh;
     flex-direction: column;
 }
 h1{
     font-size: 25px;
-    line-height: 1.04286;
+    line-height: 1.24286;
     font-weight: 600;
     letter-spacing: .007em;
     font-family: "SF Pro Display","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+    margin-bottom:5px;
 }
 
 h2{
@@ -25,6 +26,7 @@ h2{
     font-weight: 600;
     letter-spacing: -.005em;
     font-family: "SF Pro Display","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+    margin-bottom:20px;
 }
 
 .currFrom .topCurr{
@@ -33,9 +35,10 @@ h2{
 }
 .currOption{
     display:inline-block;
+    margin-right: 20px;
 }
 .fix{
-    margin: 5px;
+    margin: 10px;
 }
 .content{
     flex:1 0 auto;
@@ -46,13 +49,11 @@ footer{
     padding:5px;
     font-size: 14px;
 }
-ul.list-inline{
+ul.list-inline li{
     margin-top:0;
-    margin-bottom:15px;
+    margin-bottom:5px;
+    display:inline-block;
 }
-ul.social-buttons li a{
-    display:inline;
-  
-}
+
 
 

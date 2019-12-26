@@ -6,7 +6,7 @@
         let answerMoney1 = $('#CURR_ANSWER1');
         let API_ENDPOINT = "https://api.exchangeratesapi.io/latest";
 
-       
+
         function getQueryString() {
             if ($('#CURR_FR option:selected').val() == 'EUR') {
                 return "";
@@ -20,36 +20,18 @@
         })
 
         //dynamic dome
-        let i = 2;
-
-        $('#delete').on('click',function(){
-            if($('#list').children().length<=1){
-                alert("You cannot delete options anymore!");
-            }
-        })
-
+        let i = 1;
+      
         $('#add').on('click', function () {
             let template = $('.list .fix:first-child').clone(true);
-            let a = i++;
+            let a = ++i;
             template.attr("id", `answer${a}`);
             template.find("span.postfix").attr("id", `CURR_ANSWER${a}`);
             template.find("select").attr("id", `CURR_TO${a}`);
-            template.find("button.btn2").attr("id", `delete${a}`);
+           
             $('.list').append(template);
             console.log($('#list').children().length);
-
-            // delete DOM
-            //delete on click
-
-            let temp1 = `delete${a}`;
-            console.log(a);
-            let delBtn = $(`#${temp1}`);
-            delBtn.on('click', function () {
-                $(`#answer${a}`).remove();
-                console.log("deleted");
-                console.log($('#list').children().length);
-            })
-
+           
             let temp = `CURR_ANSWER${a}`;
             let answerMoney3 = $(`#${temp}`);
             $("#CURR_FR").on('change', function () {
@@ -59,6 +41,34 @@
                 fetchExchangeRate(`CURR_TO${a}`, answerMoney3);
             })
             totalChange(`CURR_TO${a}`, answerMoney3);
+            
+        });
+
+        // let myDeleteList = document.getElementsByClassName("fix");
+        // let n;
+        // for (n = 0; n < myDeleteList.length; n++) {
+        //     var span = document.createElement("SPAN");
+        //     var txt = document.createTextNode("\u00D7");
+        //     span.className = "del";
+        //     span.appendChild(txt);
+        //     myDeleteList[n].appendChild(span);
+        //   }
+         
+
+        // Click on a delete button to delete the current list item
+        
+        $(document).on('click', '.del' , function(e){
+            e.preventDefault();
+            // console.log($('#list').children().length);
+            if($('#list').children().length<=1){
+                alert("You cannot delete option anymore!");
+            }
+            else{
+                $(this).closest('li').fadeOut(500, function(){
+                    $(this).remove();
+                });
+            }
+           
         });
 
         inputMoney.on('input propertychange', function () {
