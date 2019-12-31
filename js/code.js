@@ -44,18 +44,6 @@
             
         });
 
-        // let myDeleteList = document.getElementsByClassName("fix");
-        // let n;
-        // for (n = 0; n < myDeleteList.length; n++) {
-        //     var span = document.createElement("SPAN");
-        //     var txt = document.createTextNode("\u00D7");
-        //     span.className = "del";
-        //     span.appendChild(txt);
-        //     myDeleteList[n].appendChild(span);
-        //   }
-         
-
-        // Click on a delete button to delete the current list item
         
         $(document).on('click', '.del' , function(e){
             e.preventDefault();
@@ -117,7 +105,10 @@
                         answerTO.html((currFrom * data.rates[currToSelect]).toFixed(2));
                     }
                 }
-            });
+            })
+            .done(function() { console.log('getJSON request succeeded!'); })
+            .fail(function(jqXHR, textStatus, errorThrown) { console.log('getJSON request failed! ' + textStatus); })
+            .always(function() { console.log('getJSON request ended!'); });
         }
         // 获取具体汇率？
         // console.clear();

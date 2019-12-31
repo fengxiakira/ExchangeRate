@@ -10,7 +10,47 @@ body{
     display:flex;
     height: 100vh;
     flex-direction: column;
+    /* background-color: rgb(232,92,65); */
+    color: white;
+    
+
 }
+
+body::before {
+    content:"";
+    position: fixed;
+    top: -100%;
+    left: -100%;
+    bottom: -100%;
+    right: -100%;
+    /* background-size: 100% 100%; */
+    background: linear-gradient(45deg,  #ffc700 0%, #e91e1e 50%, #6f27b0 100%);
+    background-size: 43px 100%,61px 100%,83px 100%;
+    animation: bgposition 8s infinite linear alternate;
+    z-index: -1;
+  
+}
+
+
+
+@keyframes bgposition{
+    0% {
+        transform: rotate(1turn);
+    }
+    25% {
+        transform: translate(30%, 30%);
+    }
+    50% {
+        transform: translate(-30%, -30%);
+    }
+    75% {
+        transform: translate(-30%, 30%);
+    }
+    100% {
+        transform: translate(30%, 30%);
+    }
+}
+
 h1{
     font-size: 25px;
     line-height: 1.24286;
@@ -29,17 +69,34 @@ h2{
     margin-bottom:20px;
 }
 
+
 .currFrom .topCurr{
-    font-size: 20px;
+    font-size: 25px;
     display:inline-block;
+    
 }
+
+
 .currOption{
     display:inline-block;
     margin-right: 20px;
+    font-size: 20px;
+    /* float: right; */
 }
+
+select{
+    background: transparent;
+    border:none;
+    color:white;
+}
+
+option{
+    color:black;
+}
+
 .fix{
     margin: 10px;
-    
+    font-size: 25px;
 }
 
 .content{
@@ -62,15 +119,15 @@ ul.list-inline li{
 }
 
 ul.list-inline li a:hover{
-    color: white;
-    background-color:black;
+    color: black;
+    background-color:white;
     animation:up-down 1s ;
    
 }
 
 @keyframes up-down {
     70% {
-      transform: translateY(-10px) scaleX(-1);
+      transform: translateY(-5px) scaleX(-1);
     }
   }
 
@@ -79,7 +136,7 @@ ul.list-inline li a{
     width: 30px;
     height: 30px;
     border-radius: 100%;
-    border: 1px solid black;
+    border: 1px solid white;
     line-height: 30px;
     outline: 0;
     background-color:transparent;
@@ -87,16 +144,86 @@ ul.list-inline li a{
     -moz-transition: all .3s;
     transition: all .3s;  */
     margin-left: 5px;
-    color:black;
+    color:white;
     font-size: 18px;
 }
 
+input{
+    /* background:transparent; */
+    font-size:25px;
+    padding-bottom:2px;
+    border:none;
+    border-bottom:white 1px solid;
+    position: relative;
+    background:transparent;
+    outline: none;
+    color:white;
+    /* display:none; */
+}
 
-
+input:focus{
+    outline:0;
+}
 
 .buttons{
     display: inline-block;
+    height: 40px;
+    /* border-bottom: black 0.5px dotted; */
+    padding: 5px;
+   
 }
+
+.buttons i{
+    font-size:25px;
+    padding:0 8px;
+    color:white;
+    /* float:right; */
+}
+.buttons a{
+    text-decoration:none;
+}
+
+.icon-zengjia:hover{
+    color:green;  
+}
+
+.icon-icon7:hover{
+    color:red;
+}
+.postfix{
+    widows: 200px;
+}
+
+#center-to-head{
+    color:white;
+    text-decoration: none;
+    /* 不设relative 就变成全局了 */
+    position:relative;
+}
+#center-to-head:after{
+    content: "";
+    width: 0;
+    height: 2px;
+    background: black;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+ 
+    transition: all .8s;
+}
+
+#center-to-head:hover:after{
+    left:0%;
+    width:100%;
+    /* transform:scale(1); */
+}
+
+
+
+
+
+
+
 
 
 
