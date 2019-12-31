@@ -3,9 +3,10 @@
 (function ($) {
     $(document).ready(function () {
         let inputMoney = $('#CURR_INPUT');
+
         let answerMoney1 = $('#CURR_ANSWER1');
         let API_ENDPOINT = "https://api.exchangeratesapi.io/latest";
-
+     
 
         function getQueryString() {
             if ($('#CURR_FR option:selected').val() == 'EUR') {
@@ -60,7 +61,16 @@
         });
 
         inputMoney.on('input propertychange', function () {
-            fetchExchangeRate('CURR_TO1', answerMoney1);
+            // e.preventDefault();
+            console.log($('#CURR_INPUT').val());
+            // console.log(inputVal);
+            if($('#CURR_INPUT').val()<0){
+                // console.log(inputVal);
+                alert("Input Value is less then 0");
+            }else{
+                fetchExchangeRate('CURR_TO1', answerMoney1);
+            }
+            
         })
 
         //   options

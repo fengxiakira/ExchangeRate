@@ -25,7 +25,7 @@ body::before {
     right: -100%;
     /* background-size: 100% 100%; */
     background: linear-gradient(45deg,  #ffc700 0%, #e91e1e 50%, #6f27b0 100%);
-    background-size: 43px 100%,61px 100%,83px 100%;
+    background-size: 100% 100%;
     animation: bgposition 8s infinite linear alternate;
     z-index: -1;
   
@@ -127,7 +127,7 @@ ul.list-inline li a:hover{
 
 @keyframes up-down {
     70% {
-      transform: translateY(-5px) scaleX(-1);
+      transform: translateY(-5px) scaleX(1);
     }
   }
 
