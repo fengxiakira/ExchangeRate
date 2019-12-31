@@ -67,6 +67,7 @@
             if($('#CURR_INPUT').val()<0){
                 // console.log(inputVal);
                 alert("Input Value is less then 0");
+                inputMoney.val('');
             }else{
                 fetchExchangeRate('CURR_TO1', answerMoney1);
             }
