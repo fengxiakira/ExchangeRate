@@ -47,7 +47,7 @@
           <div class="topCurr">
             <input  type="number"  step="0.01" id="CURR_INPUT" name="CURR_INPUT" placeholder="100" value/>
           </div>
-          <div class="currOption">
+          <div class="currOption" >
             <select  name="opt" id="CURR_FR">
               <option value="CNY">CNY</option>
               <option value="CAD" selected>CAD</option>
@@ -64,32 +64,40 @@
         </div>
 
         <!-- placeholder 是出结果的地方 -->
-        <ul class="list" id="list">
-          <li class="fix" id="answer1 ">
-            <span class="equal"> = </span>
-            <span class="postfix" id="CURR_ANSWER1"></span>
-            <div class="currOption">
-              <select name="answerOption" id="CURR_TO1">
-                <option value="CNY" selected>CNY</option>
-                <option value="CAD">CAD</option>
-                <option value="USD">USD</option>
-                <option value="EUR">EUR</option>
-                <option value="JPY">JPY</option>
-                <option value="GBP">GBP</option>
-                <option value="AUD">AUD</option>
-                <option value="SGD">SGD</option>
-                <option value="HKD">HKD</option>
-                <option value="KRW">KRW</option>
-              </select>
-            </div>
-            <!-- <button id="add" class="btn1" type="button">Add</button> -->
-            <div class="buttons">
-              <a href="#" id="add"><i class="iconfont icon-zengjia"></i></a>
-              <a href="#" class="del"><i class="iconfont icon-icon7"></i></a>
-            </div>
+        <table class="list" id="list">
+          <tr class="fix" id="answer1 ">
+            <td>
+              <span class="equal"> = </span>
+            </td>
+            <td class="answerText">
+              <span class="postfix" id="CURR_ANSWER1"></span>
+            </td>
+            <td>
+              <div class="currOption">
+                <select name="answerOption" id="CURR_TO1">
+                  <option value="CNY" selected>CNY</option>
+                  <option value="CAD">CAD</option>
+                  <option value="USD">USD</option>
+                  <option value="EUR">EUR</option>
+                  <option value="JPY">JPY</option>
+                  <option value="GBP">GBP</option>
+                  <option value="AUD">AUD</option>
+                  <option value="SGD">SGD</option>
+                  <option value="HKD">HKD</option>
+                  <option value="KRW">KRW</option>
+                </select>
+              </div>
+            </td>
+            <td>
+              <!-- <button id="add" class="btn1" type="button">Add</button> -->
+              <div class="buttons">
+                <a href="#" id="add"><i class="iconfont icon-zengjia"></i></a>
+                <a href="#" class="del"><i class="iconfont icon-icon7"></i></a>
+              </div>
+            </td>
             <!-- <button id="delete1" class="btn2" type="button">Delete</button> -->
-          </li>
-        </ul>
+          </tr>
+        </table>
     </div>
   </div>
     <footer>

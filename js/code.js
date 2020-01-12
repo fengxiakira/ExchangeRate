@@ -2,6 +2,21 @@
 
 (function ($) {
     $(document).ready(function () {
+
+        if(localStorage.getItem('from')==null){
+            localStorage.setItem('from',$('#CURR_FR option:selected').val());
+        }else{
+            // 选项用上一次的
+            let lastFrom = localStorage.getItem("from");
+            let lastTo =localStorage.getItem("to");
+            let listFrom = document.getElementById("CURR_FR");
+            let listTo = document.getElementById("CURR_TO1");
+            //for loop
+            listFrom.value = lastFrom;
+            listTo.value = lastTo;
+        }
+    
+    
         let inputMoney = $('#CURR_INPUT');
 
         let answerMoney1 = $('#CURR_ANSWER1');
@@ -15,9 +30,17 @@
                 return "?base=" + $('#CURR_FR option:selected').val();
             }
         }
-        // 实时监听
+        // 实时监听,localStorage
         $("#CURR_FR").on('change', function () {
             fetchExchangeRate('CURR_TO1', answerMoney1);
+            
+            localStorage.setItem("from",$("#CURR_FR option:selected").val());
+
+
+        })
+
+        $("#CURR_TO1").on('change',function(){
+            localStorage.setItem('to',$('#CURR_TO1 option:selected').val());
         })
 
         //dynamic dome
@@ -49,11 +72,11 @@
         $(document).on('click', '.del' , function(e){
             e.preventDefault();
             // console.log($('#list').children().length);
-            if($('#list').children().length<=1){
+            if($('#list').children().find("tbody").children().length<=1){
                 alert("You cannot delete option anymore!");
             }
             else{
-                $(this).closest('li').fadeOut(500, function(){
+                $(this).closest('tr').fadeOut(500, function(){
                     $(this).remove();
                 });
             }
@@ -82,6 +105,7 @@
             fetchExchangeRate(toPlace, answerPlace);
             $("#" + toPlace).on('change', function () {
                 fetchExchangeRate(toPlace, answerPlace);
+                localStorage.setItem('to',$('#CURR_TO1 option:selected').val());
             })
         }
 

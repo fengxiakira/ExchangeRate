@@ -190,9 +190,6 @@ input:focus{
 .icon-icon7:hover{
     color:red;
 }
-.postfix{
-    widows: 200px;
-}
 
 #center-to-head{
     color:white;
@@ -218,9 +215,15 @@ input:focus{
     /* transform:scale(1); */
 }
 
+.answerText {
+    padding-left: 12px;
+    padding-right: 5px;
+    text-align: left;
+}
 
-
-
+.list {
+    margin: auto;
+}
 
 
 
