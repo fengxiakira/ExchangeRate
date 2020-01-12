@@ -72,7 +72,9 @@
         $(document).on('click', '.del' , function(e){
             e.preventDefault();
             // console.log($('#list').children().length);
-            if($('#list').children().find("tbody").children().length<=1){
+            // $('#list').children().find("tbody").children().length
+            //hackthon if($('#list').children(0).children().length<=1){
+            if($('#list').find('tbody').children().length<=1){
                 alert("You cannot delete option anymore!");
             }
             else{
